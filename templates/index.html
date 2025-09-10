@@ -121,7 +121,7 @@
               <div class="single-recent-blog-post">
                 <div class="thumb">
                   <img class="img-fluid" src="{% if post.image_url %}{{ post.image_url }}{% else %}{% static 'img/banner/blog.png' %}{% endif %}" alt="{{ post.title }}">
-                  <ul class="thumb-info">
+                  <ul class="thumb-info" style="max-width: 550px;">
                     <li><a href="#"><i class="ti-user"></i>{{ post.author }}</a></li>
                     <li><a href="#"><i class="ti-notepad"></i>{{ post.published_at|date:"F d, Y" }}</a></li>
                     <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }} Comments</a></li>
