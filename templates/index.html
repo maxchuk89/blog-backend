@@ -129,7 +129,7 @@
                 </div>
                 <div class="details mt-20">
                   <h3><a href="/post/{{ post.slug }}/">{{ post.title }}</a></h3>
-                  <p>{{ post.text }}</p>
+                  <p>{{ post.text|truncatechars:200 }}</p>
                   <a class="button" href="/post/{{ post.slug }}/">Read More <i class="ti-arrow-right"></i></a>
                 </div>
               </div>
@@ -226,7 +226,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3  col-md-6 col-sm-6">
+          <div class="col-lg-3  col-md-6 col	sm-6">
           </div>
           <div class="col-lg-2 col-md-6 col-sm-6">
             <div class="single-footer-widget">
