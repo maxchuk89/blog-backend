@@ -1,7 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-    <h1>Тут будут контакты</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Sensive Blog - Contacts{% endblock %}
+
+{% block content %}
+  <main class="site-main">
+    <section class="mb-30px">
+      <div class="container">
+        <div class="hero-banner" style="background-image:url('{% static "img/banner/hero-banner.png" %}');">
+          <div class="hero-banner__content">
+            <h3>Contacts</h3>
+            <h1>How to find us</h1>
+            <h4>Map & details</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-margin">
+      <div class="container">
+        <!-- Лиза отдаёт HTML-код карты в переменной map -->
+        <div class="card p-3">
+          {{ map|safe }}
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
