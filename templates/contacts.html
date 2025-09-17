@@ -18,9 +18,14 @@
 
     <section class="section-margin">
       <div class="container">
-        <!-- Лиза отдаёт HTML-код карты в переменной map -->
         <div class="card p-3">
-          {{ map|safe }}
+          {% if map %}
+            {{ map|safe }}
+          {% elif folium_map %}
+            {{ folium_map|safe }}
+          {% else %}
+            <p>Карта временно недоступна.</p>
+          {% endif %}
         </div>
       </div>
     </section>
