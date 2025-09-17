@@ -63,7 +63,6 @@
                 <ul class="blog-info-link mt-3 mb-4">
                   <li><a href="#"><i class="ti-user"></i> {{ post.author }}</a></li>
                   <li><a href="#"><i class="ti-notepad"></i> {{ post.published_at|date:"F d, Y" }}</a></li>
-                  <!-- здесь показываем количество комментариев -->
                   <li><a href="#"><i class="ti-themify-favicon"></i> {{ comments|length }} Comments</a></li>
                 </ul>
                 <p class="excert">{{ post.text|linebreaksbr }}</p>
@@ -72,8 +71,7 @@
 
             <div class="navigation-top">
               <div class="d-sm-flex justify-content-between text-center">
-                <!-- лайки оставляем как были -->
-                <p class="like-info"><span class="align-middle"><i class="ti-heart"></i></span> {{ post.likes_amount }} people like this</p>
+                <p class="like-info"><span class="align-middle"><i class="ti-heart" style="color:red;"></i></span> {{ post.likes_amount }} people like this</p>
                 <div class="col-sm-4 text-center my-2 my-sm-0"></div>
                 <ul class="social-icons">
                   <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -84,7 +82,6 @@
               </div>
             </div>
 
-            <!-- КОММЕНТАРИИ: заголовок и список -->
             <div class="comments-area">
               <h4>{{ comments|length }} Comments</h4>
 
@@ -93,7 +90,6 @@
                 <div class="single-comment justify-content-between d-flex">
                   <div class="user d-flex">
                     <div class="thumb">
-                      <!-- безопасный плейсхолдер, чтобы не ловить 404 -->
                       <img src="{% static 'img/blog/blog1.png' %}" alt="">
                     </div>
                     <div class="desc">
