@@ -63,7 +63,8 @@
                 <ul class="blog-info-link mt-3 mb-4">
                   <li><a href="#"><i class="ti-user"></i> {{ post.author }}</a></li>
                   <li><a href="#"><i class="ti-notepad"></i> {{ post.published_at|date:"F d, Y" }}</a></li>
-                  <li><a href="#"><i class="ti-heart"></i> {{ post.likes_amount }} Likes</a></li>
+                  <!-- здесь показываем количество комментариев -->
+                  <li><a href="#"><i class="ti-themify-favicon"></i> {{ comments|length }} Comments</a></li>
                 </ul>
                 <p class="excert">{{ post.text|linebreaksbr }}</p>
               </div>
@@ -71,6 +72,7 @@
 
             <div class="navigation-top">
               <div class="d-sm-flex justify-content-between text-center">
+                <!-- лайки оставляем как были -->
                 <p class="like-info"><span class="align-middle"><i class="ti-heart"></i></span> {{ post.likes_amount }} people like this</p>
                 <div class="col-sm-4 text-center my-2 my-sm-0"></div>
                 <ul class="social-icons">
@@ -82,48 +84,34 @@
               </div>
             </div>
 
-            <!-- Комментарии оставляем статичными, шаг этого не требует -->
+            <!-- КОММЕНТАРИИ: заголовок и список -->
             <div class="comments-area">
-              <h4>02 Comments</h4>
+              <h4>{{ comments|length }} Comments</h4>
+
+              {% for comment in comments %}
               <div class="comment-list">
                 <div class="single-comment justify-content-between d-flex">
                   <div class="user d-flex">
                     <div class="thumb">
+                      <!-- безопасный плейсхолдер, чтобы не ловить 404 -->
                       <img src="{% static 'img/blog/blog1.png' %}" alt="">
                     </div>
                     <div class="desc">
-                      <p class="comment">Impressive post!</p>
+                      <p class="comment">{{ comment.text|linebreaksbr }}</p>
                       <div class="d-flex justify-content-between">
                         <div class="d-flex align-items-center">
-                          <h5><a href="#">Emilly Blunt</a></h5>
-                          <p class="date">December 4, 2017 at 3:12 pm </p>
+                          <h5><a href="#">{{ comment.author }}</a></h5>
+                          <p class="date">{{ comment.published_at|date:"F d, Y \\a\\t g:i a" }}</p>
                         </div>
-                        <div class="reply-btn"><a href="#" class="btn-reply text-uppercase">reply</a></div>
+                        <div class="reply-btn">
+                          <a href="#" class="btn-reply text-uppercase">reply</a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                  <div class="user d-flex">
-                    <div class="thumb">
-                      <img src="{% static 'img/blog/blog2.png' %}" alt="">
-                    </div>
-                    <div class="desc">
-                      <p class="comment">Thanks for sharing!</p>
-                      <div class="d-flex justify-content-between">
-                        <div class="d-flex align-items-center">
-                          <h5><a href="#">Elsie Cunningham</a></h5>
-                          <p class="date">December 4, 2017 at 3:12 pm </p>
-                        </div>
-                        <div class="reply-btn"><a href="#" class="btn-reply text-uppercase">reply</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% endfor %}
             </div>
 
             <div class="comment-form">
@@ -167,25 +155,20 @@
                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit">Search</button>
               </aside>
 
-              <!-- Recent Post (оставляем как фиксанули ранее, чтобы не распирало верстку) -->
               <aside class="single_sidebar_widget popular_post_widget">
                 <h3 class="widget_title">Recent Post</h3>
-
                 <div class="media post_item">
                   <img src="{% static 'img/blog/blog1.png' %}"
-                       alt="post"
-                       class="img-fluid"
+                       alt="post" class="img-fluid"
                        style="width:80px;height:auto;max-width:100%;flex-shrink:0;">
                   <div class="media-body" style="margin-left:12px;overflow:hidden;">
                     <a href="#"><h3 style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 2px;">From life was you fish...</h3></a>
                     <p style="margin:0;opacity:.7;">January 12, 2019</p>
                   </div>
                 </div>
-
                 <div class="media post_item">
                   <img src="{% static 'img/blog/blog2.png' %}"
-                       alt="post"
-                       class="img-fluid"
+                       alt="post" class="img-fluid"
                        style="width:80px;height:auto;max-width:100%;flex-shrink:0;">
                   <div class="media-body" style="margin-left:12px;overflow:hidden;">
                     <a href="#"><h3 style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 2px;">The Amazing Hubble</h3></a>
