@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Sensive Blog - Contacts{% endblock %}
+{% block title %}Sensive Blog - Contact{% endblock %}
 
 {% block content %}
   <main class="site-main">
@@ -10,7 +10,7 @@
           <div class="hero-banner__content">
             <h3>Contacts</h3>
             <h1>How to find us</h1>
-            <h4>Map & details</h4>
+            <h4>Map &amp; details</h4>
           </div>
         </div>
       </div>
@@ -19,13 +19,9 @@
     <section class="section-margin">
       <div class="container">
         <div class="card p-3">
-          {% if map %}
-            {{ map|safe }}
-          {% elif folium_map %}
-            {{ folium_map|safe }}
-          {% else %}
-            <p>Карта временно недоступна.</p>
-          {% endif %}
+          {% if map %}{{ map|safe }}
+          {% elif folium_map %}{{ folium_map|safe }}
+          {% else %}<p>Карта временно недоступна.</p>{% endif %}
         </div>
       </div>
     </section>
