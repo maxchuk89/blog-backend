@@ -3,16 +3,6 @@
 {% block title %}Sensive Blog - Home{% endblock %}
 
 {% block content %}
-  <!-- Проверка шага 7: популярные посты -->
-  {% for post in most_popular_posts %}
-    {{ post.title }}<br>
-  {% endfor %}
-
-  <!-- Проверка шага 9: свежие посты -->
-  {% for post in fresh_posts %}
-    {{ post.title }}<br>
-  {% endfor %}
-
   <main class="site-main">
     <section class="mb-30px">
       <div class="container">
@@ -32,7 +22,7 @@
           <div class="flex-fill" style="margin-right: 30px;">
             <div class="card blog__slide text-center">
               <div class="blog__slide__img">
-                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/blog-slide1.png' %}" alt="">
+                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/blog-slide1.png' %}" alt="Blog slide 1">
               </div>
               <div class="blog__slide__content">
                 <h3><a href="#">New york fashion week's continued the evolution</a></h3>
@@ -44,7 +34,7 @@
           <div class="flex-fill" style="margin-right: 30px;">
             <div class="card blog__slide text-center">
               <div class="blog__slide__img">
-                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/blog-slide2.png' %}" alt="">
+                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/blog-slide2.png' %}" alt="Blog slide 2">
               </div>
               <div class="blog__slide__content">
                 <h3><a href="#">New york fashion week's continued the evolution</a></h3>
@@ -56,7 +46,7 @@
           <div class="flex-fill">
             <div class="card blog__slide text-center">
               <div class="blog__slide__img">
-                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/blog-slide3.png' %}" alt="">
+                <img class="card-img rounded-0" src="{% static 'img/blog/blog-slider/blog-slide3.png' %}" alt="Blog slide 3">
               </div>
               <div class="blog__slide__content">
                 <h3><a href="#">New york fashion week's continued the evolution</a></h3>
@@ -97,24 +87,21 @@
                   <ul class="pagination">
                     <li class="page-item">
                       <a href="#" class="page-link" aria-label="Previous">
-                        <span aria-hidden="true">
-                          <i class="ti-angle-left"></i>
-                        </span>
+                        <span aria-hidden="true"><i class="ti-angle-left"></i></span>
                       </a>
                     </li>
                     <li class="page-item active"><a href="#" class="page-link">1</a></li>
                     <li class="page-item"><a href="#" class="page-link">2</a></li>
                     <li class="page-item">
                       <a href="#" class="page-link" aria-label="Next">
-                        <span aria-hidden="true">
-                          <i class="ti-angle-right"></i>
-                        </span>
+                        <span aria-hidden="true"><i class="ti-angle-right"></i></span>
                       </a>
                     </li>
                   </ul>
                 </nav>
               </div>
             </div>
+
           </div>
 
           <div class="col-lg-4 sidebar-widgets">
@@ -123,8 +110,7 @@
                 <h4 class="single-sidebar-widget__title">Newsletter</h4>
                 <div class="form-group mt-30">
                   <div class="col-autos">
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Enter email'">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
                   </div>
                 </div>
                 <button class="bbtns d-block mt-20 w-100">Subcribe</button>

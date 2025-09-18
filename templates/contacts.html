@@ -6,13 +6,15 @@
   <main class="site-main">
     <section class="mb-30px">
       <div class="container">
-        <div class="hero-banner" style="background-image:url('{% static "img/banner/hero-banner.png" %}');">
-          <div class="hero-banner__content">
-            <h3>Contacts</h3>
-            <h1>How to find us</h1>
-            <h4>Map &amp; details</h4>
+        <a href="{% url 'index' %}" style="display:block; text-decoration:none;">
+          <div class="hero-banner" style="background-image:url('{% static "img/banner/hero-banner.png" %}');">
+            <div class="hero-banner__content">
+              <h3>Contacts</h3>
+              <h1>How to find us</h1>
+              <h4>Map &amp; details</h4>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 

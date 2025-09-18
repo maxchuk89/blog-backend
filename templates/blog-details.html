@@ -5,13 +5,15 @@
 {% block content %}
   <section class="mb-30px">
     <div class="container">
-      <div class="hero-banner" style="background-image:url('{% static "img/banner/hero-banner.png" %}');">
-        <div class="hero-banner__content">
-          <h3>Tours &amp; Travels</h3>
-          <h1>Blog Details</h1>
-          <h4>Post page</h4>
+      <a href="{% url 'index' %}" style="display:block; text-decoration:none;">
+        <div class="hero-banner" style="background-image:url('{% static "img/banner/hero-banner.png" %}');">
+          <div class="hero-banner__content">
+            <h3>Tours &amp; Travels</h3>
+            <h1>Blog Details</h1>
+            <h4>Post page</h4>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -57,7 +59,7 @@
               <div class="single-comment justify-content-between d-flex">
                 <div class="user d-flex">
                   <div class="thumb">
-                    <img src="{% static 'img/blog/blog1.png' %}" alt="">
+                    <img src="{% static 'img/blog/blog1.png' %}" alt="avatar">
                   </div>
                   <div class="desc">
                     <p class="comment">{{ comment.text|linebreaksbr }}</p>
@@ -116,26 +118,6 @@
                 </div>
               </div>
               <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit">Search</button>
-            </aside>
-
-            <aside class="single_sidebar_widget popular_post_widget">
-              <h3 class="widget_title">Recent Post</h3>
-              <div class="media post_item">
-                <img src="{% static 'img/blog/blog1.png' %}" alt="post" class="img-fluid"
-                     style="width:80px;height:auto;max-width:100%;flex-shrink:0;">
-                <div class="media-body" style="margin-left:12px;overflow:hidden;">
-                  <a href="#"><h3 style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 2px;">From life was you fish...</h3></a>
-                  <p style="margin:0;opacity:.7;">January 12, 2019</p>
-                </div>
-              </div>
-              <div class="media post_item">
-                <img src="{% static 'img/blog/blog2.png' %}" alt="post" class="img-fluid"
-                     style="width:80px;height:auto;max-width:100%;flex-shrink:0;">
-                <div class="media-body" style="margin-left:12px;overflow:hidden;">
-                  <a href="#"><h3 style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 2px;">The Amazing Hubble</h3></a>
-                  <p style="margin:0;opacity:.7;">02 Hours ago</p>
-                </div>
-              </div>
             </aside>
 
             <aside class="single_sidebar_widget tag_cloud_widget">
