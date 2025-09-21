@@ -2,26 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Sensive Blog{% endblock %}</title>
-    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png" />
-    <link rel="stylesheet" href="{% static 'styles.min.css' %}" />
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'styles.min.css' %}">
   </head>
   <body>
-    <!--================Header Menu Area =================-->
     <header class="header_area">
       <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container box_1620">
-            <!-- ЛОГО: ведёт на главную -->
             <a class="navbar-brand logo_h" href="{% url 'index' %}">
-              <img src="{% static 'img/logo.png' %}" alt="Sensive" />
+              <img src="{% static 'img/logo.png' %}" alt="Sensive logo">
             </a>
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -47,9 +44,12 @@
         </nav>
       </div>
     </header>
-    <!--================Header Menu Area =================-->
 
-    {% block content %}{% endblock %}
+    {% block hero %}{% endblock %}
+
+    <main class="site-main">
+      {% block content %}{% endblock %}
+    </main>
 
     <footer class="footer-area section-padding">
       <div class="container">
@@ -69,14 +69,15 @@
               <p>Stay update with our latest</p>
               <div id="mc_embed_signup">
                 <form target="_blank" novalidate
-                  action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                  method="get" class="form-inline">
+                      action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                      method="get" class="form-inline">
                   <div class="d-flex flex-row">
                     <input class="form-control" name="EMAIL" placeholder="Enter Email"
-                      onfocus="this.placeholder=''" onblur="this.placeholder='Enter Email '" required type="email" />
+                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+                           required type="email">
                     <button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
-                    <div style="position:absolute;left:-5000px;">
-                      <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text" />
+                    <div style="position: absolute; left: -5000px;">
+                      <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
                     </div>
                   </div>
                   <div class="info"></div>
