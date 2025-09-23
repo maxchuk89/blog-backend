@@ -15,7 +15,7 @@ urlpatterns = [
 
     path('', views.index, name='index'),
     path('contact/', views.contact, name='contact'),
-    path('post/<slug:slug>', views.post_detail, name='post_detail'),
+    path('post/<slug:slug>/', views.post_detail, name='post_detail'),
     path(
         'favicon.ico',
         RedirectView.as_view(url=staticfiles_storage.url('img/favicon.png'), permanent=True),
