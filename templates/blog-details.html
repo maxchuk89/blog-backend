@@ -27,9 +27,11 @@
         <div class="col-lg-8 posts-list">
           <div class="single-post">
             <div class="feature-img">
-              <img class="img-fluid"
-                   src="{% if post.image_url %}{{ post.image_url }}{% else %}{% static 'img/banner/blog.png' %}{% endif %}"
-                   alt="{{ post.title }}">
+              {% if post.image_url %}
+                <img class="img-fluid" src="{{ post.image_url }}" alt="{{ post.title }}">
+              {% else %}
+                <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="{{ post.title }}">
+              {% endif %}
             </div>
 
             <div class="blog_details">

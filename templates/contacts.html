@@ -4,49 +4,47 @@
 {% block title %}Contact{% endblock %}
 
 {% block content %}
-<section class="mb-30px">
-  <div class="container">
-    <div class="hero-banner" style="background-image:url('{% static "img/banner/hero-banner.png" %}');">
-      <div class="hero-banner__content">
-        <h3>Contact</h3>
-        <h1>Get in touch</h1>
-        <h4>Home - Contact</h4>
+  <section class="mb-30px">
+    <div class="container">
+      <div class="hero-banner" style="background-image:url('{% static "img/banner/hero-banner.png" %}');">
+        <div class="hero-banner__content">
+          <h3>Contact</h3>
+          <h1>Get in touch</h1>
+          <h4>Home - Contact</h4>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-margin">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        {{ map|safe }}
-      </div>
+  <section class="section-margin">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          {{ map|safe }}
+        </div>
 
-      <div class="col-lg-4 sidebar-widgets">
-        <div class="widget-wrap">
-          <div class="single-sidebar-widget newsletter-widget">
-            <h4 class="single-sidebar-widget__title">Newsletter</h4>
-            <div class="form-group mt-30">
-              <div class="col-autos">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter email"
-                  onfocus="this.placeholder=''"
-                  onblur="this.placeholder='Enter email'"
-                >
+        <div class="col-lg-4 sidebar-widgets">
+          <div class="widget-wrap">
+            <div class="single-sidebar-widget newsletter-widget">
+              <h4 class="single-sidebar-widget__title">Newsletter</h4>
+              <div class="form-group mt-30">
+                <div class="col-autos">
+                  <input type="text"
+                         class="form-control"
+                         placeholder="Enter email"
+                         onfocus="this.placeholder=''"
+                         onblur="this.placeholder='Enter email'">
+                </div>
               </div>
+              <button class="bbtns d-block mt-20 w-100">Subscribe</button>
             </div>
-            <button class="bbtns d-block mt-20 w-100">Subscribe</button>
-          </div>
 
-          <div class="single-sidebar-widget post-category-widget">
-            <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
+            <div class="single-sidebar-widget post-category-widget">
+              <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 {% endblock %}
